@@ -1,9 +1,44 @@
 <template>
   <q-layout-header>
-    <q-tabs>
-      <!-- Tabs - notice slot="title" -->
-      <q-route-tab default count="5" slot="title"  icon="message" to="/" />
-    </q-tabs>
+    <q-toolbar
+      color="primary"
+    >
+    <q-toolbar-title>
+        <img height="150px" src="statics/logo_baby.png">
+      </q-toolbar-title>
+    </q-toolbar>
+    <section class="col-100 text-center">
+      <q-btn-group
+        flat
+        class="center"
+      >
+      <q-btn
+        text-color ="pink-4"
+        label="Home"
+        @click="clickHandler1"
+      />
+      <q-btn
+        text-color ="pink-4"
+        label="Nosotros"
+        @click="clickHandler2"/>
+      <q-btn
+        text-color ="pink-4"
+        label="Productos"
+        @click="clickHandler3"/>
+      <q-btn
+        text-color ="pink-4"
+        label="Pañales"
+        @click="clickHandler3"/>
+      <q-btn
+        text-color ="pink-4"
+        label="Ayuda"
+        @click="clickHandler3"/>
+      <q-btn
+        text-color ="pink-4"
+        label="Contacto"
+        @click="clickHandler3"/>
+    </q-btn-group>
+    </section>
   </q-layout-header>
 </template>
 
@@ -11,10 +46,15 @@
 //  import { } from 'quasar';
 
 import {
-  QTabs,
-  QTab,
-  QTabPane,
-  QRouteTab
+  QBtnGroup,
+  QBtn,
+  QPopover,
+  QBtnDropdown,
+  QItem,
+  QItemMain,
+  QItemTile,
+  QItemSeparator,
+  QItemSide
 } from 'quasar'
 
 export default {
@@ -38,10 +78,15 @@ export default {
     }
   },
   components: {
-    QTabs,
-    QTab,
-    QTabPane,
-    QRouteTab
+    QBtnGroup,
+    QBtn,
+    QPopover,
+    QBtnDropdown,
+    QItem,
+    QItemMain,
+    QItemTile,
+    QItemSeparator,
+    QItemSide
   },
   created () {
     this.userName = localStorage.getItem('userName')
@@ -50,13 +95,14 @@ export default {
 </script>
 
 <style lang="stylus">
-.center {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom : 5px;
-  margin-top:5px;
+.col-100 {
+    width: 100%;
 }
+
+.q-layout-header {
+  box-shadow: none
+}
+
 .qitemMenu:hover{
   color :red
   background:"#DCDCDC"

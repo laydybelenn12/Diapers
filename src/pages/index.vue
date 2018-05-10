@@ -2,11 +2,10 @@
   <main-layout>
     <general-section>
       <section class="col-100 text-center">
-        <a>ddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd</a>
         <q-carousel
           color="white"
           arrows
-          height="400px"
+          height="200px"
         >
           <q-carousel-slide img-src="statics/mountains.jpg">
             <div class="absolute-bottom custom-caption">
@@ -57,4 +56,10 @@ export default {
 }
 </script>
 <style lang="stylus">
+.col-100 {
+    width: 100%;
+}
+.lighter{
+  color: #999;
+}
 </style>
